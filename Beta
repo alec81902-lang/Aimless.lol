@@ -2284,8 +2284,7 @@ end
  
 zombieBtn.MouseButton1Click:Connect(zombigga)
 plrs.LocalPlayer.CharacterAdded:Connect(zombigga)
-if plrs.LocalPlayer.Character then zombigga() 
-end
+if plrs.LocalPlayer.Character then zombigga() end
 end})
 
 
