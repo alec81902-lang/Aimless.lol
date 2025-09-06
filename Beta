@@ -2245,7 +2245,47 @@ main:Button({Name = "FP", Callback = function()
 end})
 
 main:Button({Name = "Reset button", Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/hH4qQsPj"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/alec81902-lang/Reset-button-by-Kasp-/refs/heads/main/Xd"))();
+end})
+
+main:Button({Name = "Animations", Callback = function()
+    local animations = {
+    climb = { ClimbAnim = "http://www.roblox.com/asset/?id=10921343576" },
+    fall = { FallAnim = "http://www.roblox.com/asset/?id=10921159222" },
+    idle = { Animation1 = "http://www.roblox.com/asset/?id=10921344533", Animation2 = "http://www.roblox.com/asset/?id=10921345304" },
+    jump = { JumpAnim = "http://www.roblox.com/asset/?id=10921160088" },
+    run = { RunAnim = "http://www.roblox.com/asset/?id=616163682" },
+    swim = { Swim = "http://www.roblox.com/asset/?id=10921352344" },
+    swimidle = { SwimIdle = "http://www.roblox.com/asset/?id=10921353442" },
+    walk = { WalkAnim = "http://www.roblox.com/asset/?id=10921355261" }
+}
+ 
+local function zombigga()
+    local player = plrs.LocalPlayer
+    if not player then return end
+    local character = player.Character or player.CharacterAdded:Wait()
+    local animate = character:WaitForChild("Animate")
+    local humanoid = character:WaitForChild("Humanoid")
+    animate.Disabled = true
+    for _,v in pairs(humanoid:GetPlayingAnimationTracks()) do v:Stop() end
+    for anim_type,anims in pairs(animations) do
+        local anim_folder = animate:FindFirstChild(anim_type)
+        if anim_folder then
+            for anim_name,new_id in pairs(anims) do
+                local anim = anim_folder:FindFirstChild(anim_name)
+                if anim and anim:IsA("Animation") and anim.AnimationId ~= new_id then
+                    anim.AnimationId = new_id
+                end
+            end
+        end
+    end
+    animate.Disabled = false
+end
+ 
+zombieBtn.MouseButton1Click:Connect(zombigga)
+plrs.LocalPlayer.CharacterAdded:Connect(zombigga)
+if plrs.LocalPlayer.Character then zombigga() 
+end
 end})
 
 
