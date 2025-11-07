@@ -2252,10 +2252,6 @@ main:Button({Name = "All", Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/ZKKvGs7R"))();
 end})
 
-main:Button({Name = "Stretched resolution", Callback = function()   
-   loadstring(game:HttpGet("https://pastebin.com/raw/fmrbWmRw"))();
-end}) 
-
  main:Button({Name = "Animations", Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/DPtvnX6C"))();
 end})
