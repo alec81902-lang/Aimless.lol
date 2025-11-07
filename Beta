@@ -2248,7 +2248,7 @@ main:Button({Name = "Reset button", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/alec81902-lang/Reset-button-by-Kasp-/refs/heads/main/Xd"))();
 end})
 
-main:Button({Name = "Reset button", Callback = function()
+main:Button({Name = "All", Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/ZKKvGs7R"))();
 end})
 
